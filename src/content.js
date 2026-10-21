@@ -4,100 +4,100 @@ import { icon } from './icons.js';
 
 export const stackCards = [
   {
-    title: 'Live Energy Map',
+    title: 'Driver Discovery',
     theme: 'light',
-    items: [['gauge', 'Whole-home metering'], ['plug', 'Circuit-level detail'], ['sun', 'Solar & battery sync'], ['bell', 'Real-time alerts']],
-    text: 'Watch power flow through your home second by second, from the grid, the roof and the battery, down to the socket that is drawing it.',
+    items: [['gauge', 'Connector matching'], ['plug', 'Reachable-range filter'], ['sun', 'Pune map and list'], ['bell', 'Freshness labels']],
+    text: 'Every result must pass connector compatibility and the range calculation with its safety margin, so ineligible chargers stay hidden.',
   },
   {
-    title: 'Smart Scheduling',
+    title: 'Community Booking',
     theme: 'blue',
-    items: [['car', 'Off-peak EV charging'], ['clock', 'Appliance timers'], ['receipt', 'Tariff-aware runs'], ['sun', 'Weather forecasting']],
-    text: 'Heavy loads wait for the cheapest, cleanest hours automatically, without you lifting a finger or changing a single habit.',
+    items: [['car', 'Start and end time'], ['clock', 'Host reply window'], ['receipt', 'Checkout window'], ['sun', 'Cancellation policy']],
+    text: 'The host has two minutes to accept a request, then a five-minute checkout opens before the driver is told to travel.',
   },
   {
-    title: 'Bill Intelligence',
+    title: 'Transparent Pricing',
     theme: 'dark',
-    items: [['wallet', 'Cost forecasting'], ['chart', 'Tariff comparison'], ['calendar', 'Monthly reports'], ['leaf', 'Carbon tracking']],
-    text: 'Know what this month will cost before the bill arrives, and see exactly which switch would have saved the most.',
+    items: [['wallet', 'Indicative cost'], ['chart', 'Itemised receipt'], ['calendar', 'Basic or Standard'], ['leaf', 'No surge pricing']],
+    text: 'The full price is disclosed before the driver commits, with parking and overtime terms shown separately.',
   },
   {
-    title: 'Device Health',
+    title: 'Host Controls',
     theme: 'soft',
-    items: [['shield', 'Fault detection'], ['spark', 'Efficiency scores'], ['bell', 'Service reminders'], ['receipt', 'Warranty vault']],
-    text: 'Subtle changes in how an appliance draws power reveal wear early, so you fix things on your schedule, not theirs.',
+    items: [['shield', 'Weekly schedule'], ['spark', 'Accept or decline'], ['bell', 'Blackout periods'], ['receipt', 'Earnings records']],
+    text: 'Hosts share charging on their own schedule, control who books, and keep visible records with transparent deductions.',
   },
   {
-    title: 'Certified Installers',
+    title: 'Admin Verification',
     theme: 'blue',
-    items: [['user', 'Vetted electricians'], ['receipt', 'Fixed, clear quotes'], ['calendar', 'Same-week visits'], ['shield', 'Workmanship guarantee']],
-    text: 'When an upgrade makes sense, book a certified pro in the app with your home data already shared and the job scoped.',
+    items: [['user', 'Identity reviewed'], ['receipt', 'Property reviewed'], ['calendar', 'Equipment evidence'], ['shield', 'Paid-operation check']],
+    text: 'Each check is recorded separately instead of one generic Verified badge, and only approved sites take real bookings.',
   },
 ];
 
 export const smarterCards = [
-  { icon: 'gauge', title: 'Track Every\nWatt', text: 'See live usage for every room and appliance, refreshed every few seconds.', primary: true },
-  { icon: 'clock', title: 'Automate\nthe Routine', text: 'Let heavy loads run themselves when power is cheapest and cleanest.' },
-  { icon: 'chart', title: 'Dodge Peak\nPrices', text: 'Ampere watches your tariff and shifts demand before the rates spike.' },
-  { icon: 'shield', title: 'Catch Faults\nEarly', text: 'Unusual draw patterns flag failing appliances before they break down.' },
-  { icon: 'wrench', title: 'Book a Certified\nInstaller', text: 'From heat pumps to EV chargers, get vetted pros with fixed quotes.' },
+  { icon: 'gauge', title: 'Connector\nChecks', text: 'Mode, inlet, cable and effective power matter, not only the connector name.', primary: true },
+  { icon: 'clock', title: 'Conservative\nEstimates', text: 'Range uses usable capacity, your battery level and a safety margin.' },
+  { icon: 'chart', title: 'Status\nFreshness', text: 'Labels separate host updates, partner data, stale, unknown and demo.' },
+  { icon: 'shield', title: 'Access\nInstructions', text: 'Private entrance and contact details unlock once you are confirmed.' },
+  { icon: 'wrench', title: 'Confirmed Before\nYou Leave', text: 'Community slots need host acceptance before the driver sets off.' },
 ];
 
 export const steps = [
-  { title: 'Fit the smart sensor', text: 'A clip-on reader suits almost any meter.' },
-  { title: 'Let Ampere learn your home', text: 'One week of data builds your energy profile.' },
-  { title: 'Review your plan', text: 'Ranked actions, each with savings attached.' },
-  { title: 'Watch bills shrink', text: 'Automations run while you get on with life.' },
+  { title: 'Discover and compare', text: 'Only chargers that fit your car appear.' },
+  { title: 'Request a community slot', text: 'The host has two minutes to confirm it.' },
+  { title: 'Arrive and charge', text: 'An arrival code confirms the booking.' },
+  { title: 'Get your receipt', text: 'An itemised receipt closes the session.' },
 ];
 
 export const stories = [
   {
     img: '/img/story-1.jpg',
-    quote: 'I always assumed the dryer was our big expense. Ampere showed me it was an ancient chest freezer in the garage running flat out. Replacing it paid for itself in eight months.',
-    name: 'Elena Novak',
-    role: 'Homeowner, Lisbon',
+    quote: 'Beyond finding a pin, drivers must know if the connector fits and the equipment works. They need entry to the property. They need a free slot and the full cost.',
+    name: 'Car Owners',
+    role: 'Planned charging',
   },
   {
     img: '/img/story-2.jpg',
-    quote: 'Our panels finally make sense. The app moves the washing and the car charging into sunny hours, and we export far less for far less money.',
-    name: 'Tom Brennan',
-    role: 'Solar owner, Dublin',
+    quote: 'Ampere must not promise rescue at 4%. It filters carefully and shows an honest empty state when no credible option exists.',
+    name: 'Low Battery',
+    role: '4% demo driver, Pune',
   },
   {
     img: '/img/story-3.jpg',
-    quote: 'With five of us at home the bills were chaos. Now the kids compete over the weekly energy score, which I never expected to write.',
-    name: 'Aisha Rahman',
-    role: 'Family of five, Leeds',
+    quote: 'Sharing brings parking conflicts, load limits and strangers at the property. Hosts need control over who books and when.',
+    name: 'Home Owners',
+    role: 'With permitted parking',
   },
   {
     img: '/img/story-4.jpg',
-    quote: 'Off-peak charging used to mean setting alarms. Ampere just handles it, and my cost per kilometre has nearly halved since spring.',
-    name: 'Lukas Meier',
-    role: 'EV driver, Zürich',
+    quote: 'Cafés and offices can offer suitable chargers and spare visitor capacity. They keep control of who books and when the charger is offered.',
+    name: 'Venue Hosts',
+    role: 'Cafés or offices',
   },
   {
     img: '/img/story-5.jpg',
-    quote: 'I manage six flats. Fault alerts flagged a failing immersion heater before a tenant ever noticed, which saved a very awkward weekend call-out.',
-    name: 'Grace Okafor',
-    role: 'Landlord, Manchester',
+    quote: 'Administrators review verification evidence. They also handle suspensions, disputes, event history and payment exceptions.',
+    name: 'Site Admins',
+    role: 'Verification queue',
   },
 ];
 
 export const articles = [
-  { img: '/img/article-1.jpg', tag: 'Guide', time: '5 min read', title: 'How to read your smart meter in five minutes', text: 'The three numbers that matter, and the ones you can safely ignore.' },
-  { img: '/img/article-2.jpg', tag: 'Solar', time: '8 min read', title: 'Is a home battery worth it this year?', text: 'A plain-numbers look at payback, tariffs and self-consumption.' },
-  { img: '/img/article-3.jpg', tag: 'Heating', time: '7 min read', title: 'Heat pumps: what nobody tells you about winter', text: 'Flow temperatures, defrost cycles and keeping running costs low.' },
-  { img: '/img/article-4.jpg', tag: 'Savings', time: '4 min read', title: 'The quiet cost of standby power', text: 'Why devices that look off can still add up across a year.' },
-  { img: '/img/article-5.jpg', tag: 'EV', time: '6 min read', title: 'Off-peak tariffs explained for EV owners', text: 'Choosing a tariff that fits how and when you actually drive.' },
+  { img: '/img/article-1.jpg', tag: 'Policy', time: 'Source S7', title: 'Ministry of Power charging guidelines, 2024', text: 'Clauses on home connections, authorised visitors and fees.' },
+  { img: '/img/article-2.jpg', tag: 'Roaming', time: 'Source S5', title: 'How does OCPI connect charging platforms?', text: 'OCPI connects platforms; OCPP connects charging equipment.' },
+  { img: '/img/article-3.jpg', tag: 'Maps', time: 'Source S8', title: 'OpenStreetMap tile usage policy and limits', text: 'Public tiles have a usage policy and no availability guarantee.' },
+  { img: '/img/article-4.jpg', tag: 'Payments', time: 'Source S9', title: 'Razorpay payment integration steps', text: 'The server verifies signature and captured payment status.' },
+  { img: '/img/article-5.jpg', tag: 'Security', time: 'Source S10', title: 'Supabase row level security and keys', text: 'Policies isolate each driver\'s bookings and each host\'s sites.' },
 ];
 
 export const faqs = [
-  { q: 'Does Ampere work with my meter?', a: 'The clip-on sensor works with most single and three-phase meters. If you already have a compatible smart meter, Ampere can read it directly with no hardware at all.' },
-  { q: 'Do I need solar panels or a battery?', a: 'No. Most savings come from understanding and shifting everyday usage. If you do have solar, a battery or an EV, Ampere coordinates them automatically.' },
-  { q: 'How long does setup take?', a: 'Around ten minutes. Fit the sensor, pair it in the app and you will see live data straight away. Personalised recommendations arrive after the first week.' },
-  { q: 'What happens to my data?', a: 'Your data is encrypted, stored in the EU and never sold. You can export or delete everything from the app settings whenever you like.' },
-  { q: 'Can I control appliances from the app?', a: 'Yes, through supported smart plugs, chargers, thermostats and inverters. Ampere can also simply remind you when a manual switch would save money.' },
-  { q: 'Is there a subscription?', a: 'The core app is free. Ampere Plus adds automations, multi-property support and installer booking for a small monthly fee, with a free first month.' },
+  { q: 'Which vehicles does Ampere support?', a: 'Cars are the first supported vehicle category. Scooters and other vehicles will need a separate compatibility and equipment review before Ampere supports them.' },
+  { q: 'Can Ampere reserve public chargers?', a: 'Not directory listings. The operator handles access and payment there. Ampere reserves only through supported connected integrations.' },
+  { q: 'When should I start driving?', a: 'Only after the host confirms and any checkout is complete. Your booking then shows host confirmed. Starting the journey appends a departure event and shows on the way.' },
+  { q: 'Who sees the exact address?', a: 'Discovery shows only an approximate area. Exact entrance, address and host contact appear only to an authorised confirmed driver.' },
+  { q: 'What if a host declines my request?', a: 'The hold is released and no charge is due. Ampere shows alternatives, and you choose one only after a fresh reachability check runs.' },
+  { q: 'Is there a booking fee?', a: 'Basic has no recurring fee, and Standard has a proposed ₹20 booking fee. In the demo, 8 kWh at ₹14/kWh plus that fee shows a ₹132 total.' },
 ];
 
 // ---------- Renderers ----------
@@ -198,7 +198,7 @@ export function renderContent() {
     strip.innerHTML = stories
       .map(
         (s, i) => `
-      <button type="button" class="story-thumb" data-story-thumb="${i}" aria-label="Show story from ${s.name}">
+      <button type="button" class="story-thumb" data-story-thumb="${i}" aria-label="Show persona: ${s.name}">
         <img src="${s.img}" alt="" draggable="false"/>
         <span class="story-thumb-name">${s.name}</span>
       </button>`
@@ -220,7 +220,7 @@ export function renderContent() {
           <div class="article-meta" data-panel-item><span>${a.tag}</span><span>${a.time}</span></div>
           <h3 class="text-30" data-panel-item>${a.title}</h3>
           <p class="text-20" data-panel-item>${a.text}</p>
-          <a href="#" class="article-link text-20" data-panel-item>Read guide ${arrowSwap}</a>
+          <a href="#" class="article-link text-20" data-panel-item>Read source ${arrowSwap}</a>
         </div>
       </article>`
       )

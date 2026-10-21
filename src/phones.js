@@ -34,26 +34,26 @@ const screens = {
     ${statusBar()}
     <div class="ph-body">
       <div class="ph-hello">
-        <div><p class="ph-muted">Good evening</p><p class="ph-title">Maya's Home</p></div>
-        <span class="ph-avatar">M</span>
+        <div><p class="ph-muted">Demo driver</p><p class="ph-title">Pune Search</p></div>
+        <span class="ph-avatar">D</span>
       </div>
       <div class="ph-card ph-today">
-        <div class="ph-ring-wrap">${ring(0.68)}<div class="ph-ring-label"><b>14.2</b><span>kWh today</span></div></div>
+        <div class="ph-ring-wrap">${ring(0.68)}<div class="ph-ring-label"><b>7.2</b><span>kWh to car</span></div></div>
         <div class="ph-today-stats">
-          <p><span class="ph-good">↓ 18%</span><small>vs last week</small></p>
-          <p><span>€2.86</span><small>spent so far</small></p>
-          <p><span>63%</span><small>from solar</small></p>
+          <p><span class="ph-good">7 kW</span><small>charger power</small></p>
+          <p><span>₹132</span><small>demo total</small></p>
+          <p><span>90%</span><small>efficiency</small></p>
         </div>
       </div>
       <div class="ph-duo">
-        <div class="ph-card ph-mini">${icon('sun', 'ph-mini-ic')}<small>Solar</small><b>+6.1 kWh</b></div>
-        <div class="ph-card ph-mini">${icon('battery', 'ph-mini-ic')}<small>Battery</small><b>82%</b><span class="ph-bar"><i style="width:82%"></i></span></div>
+        <div class="ph-card ph-mini">${icon('sun', 'ph-mini-ic')}<small>Range</small><b>4 km est.</b></div>
+        <div class="ph-card ph-mini">${icon('battery', 'ph-mini-ic')}<small>Window</small><b>90 min</b><span class="ph-bar"><i style="width:82%"></i></span></div>
       </div>
-      <p class="ph-section">Active now</p>
+      <p class="ph-section">In range</p>
       <div class="ph-card ph-list">
-        <div class="ph-row"><span class="ph-ic">${icon('flame')}</span><span class="ph-row-txt"><b>Oven</b><small>Kitchen</small></span><span class="ph-row-val">2.1 kW</span></div>
-        <div class="ph-row"><span class="ph-ic">${icon('car')}</span><span class="ph-row-txt"><b>EV Charger</b><small>Scheduled 01:00</small></span><span class="ph-chip">Off-peak</span></div>
-        <div class="ph-row"><span class="ph-ic">${icon('snow')}</span><span class="ph-row-txt"><b>Heat pump</b><small>Living room</small></span><span class="ph-row-val">0.9 kW</span></div>
+        <div class="ph-row"><span class="ph-ic">${icon('flame')}</span><span class="ph-row-txt"><b>Café charger</b><small>Community</small></span><span class="ph-row-val">7 kW</span></div>
+        <div class="ph-row"><span class="ph-ic">${icon('car')}</span><span class="ph-row-txt"><b>Public listing</b><small>Status unknown</small></span><span class="ph-chip">Directory</span></div>
+        <div class="ph-row"><span class="ph-ic">${icon('snow')}</span><span class="ph-row-txt"><b>Demo listing</b><small>Synthetic data</small></span><span class="ph-row-val">Demo</span></div>
       </div>
     </div>
     ${tabBar(0)}`,
@@ -61,16 +61,16 @@ const screens = {
   rooms: () => `
     ${statusBar()}
     <div class="ph-body">
-      <div class="ph-hello"><div><p class="ph-muted">12 devices online</p><p class="ph-title">Rooms</p></div><span class="ph-icon-btn">${icon('search')}</span></div>
-      <div class="ph-chips"><span class="is-on">All</span><span>Upstairs</span><span>Downstairs</span><span>Outside</span></div>
+      <div class="ph-hello"><div><p class="ph-muted">Demo host sites</p><p class="ph-title">Sites</p></div><span class="ph-icon-btn">${icon('search')}</span></div>
+      <div class="ph-chips"><span class="is-on">All</span><span>Home</span><span>Café</span><span>Office</span></div>
       <div class="ph-rooms">
         ${[
-          ['Kitchen', 'flame', '2.4 kW', true],
-          ['Living', 'tv', '0.6 kW', true],
-          ['Bedroom', 'bulb', '0.1 kW', false],
-          ['Laundry', 'washer', '1.2 kW', true],
-          ['Garage', 'car', 'Idle', false],
-          ['Office', 'plug', '0.3 kW', false],
+          ['Café bay', 'flame', 'Accepting', true],
+          ['Home bay', 'tv', 'Accepting', true],
+          ['Office bay', 'bulb', 'Paused', false],
+          ['Society bay', 'washer', 'Accepting', true],
+          ['Own car', 'car', 'Blocked', false],
+          ['New site', 'plug', 'In review', false],
         ]
           .map(
             ([n, ic, v, on]) => `
@@ -92,12 +92,12 @@ const screens = {
       <div class="ph-orb">
         <span class="ph-orb-ring r1"></span><span class="ph-orb-ring r2"></span><span class="ph-orb-ring r3"></span>
         <span class="ph-orb-core">${icon('bolt')}</span>
-        <span class="ph-orb-tag t1">${icon('sun')}Solar</span>
-        <span class="ph-orb-tag t2">${icon('battery')}Battery</span>
-        <span class="ph-orb-tag t3">${icon('car')}EV</span>
+        <span class="ph-orb-tag t1">${icon('sun')}Public</span>
+        <span class="ph-orb-tag t2">${icon('battery')}Private</span>
+        <span class="ph-orb-tag t3">${icon('car')}Demo</span>
       </div>
-      <p class="ph-welcome-title">Your whole home, in one app</p>
-      <p class="ph-welcome-sub">See it. Schedule it. Save on it.</p>
+      <p class="ph-welcome-title">Every charger, in one search</p>
+      <p class="ph-welcome-sub">Find it. Request it. Charge it.</p>
       <span class="ph-welcome-btn">Get started</span>
       <span class="ph-welcome-link">I already have an account</span>
     </div>`,
@@ -105,16 +105,16 @@ const screens = {
   devices: () => `
     ${statusBar()}
     <div class="ph-body">
-      <div class="ph-hello"><div><p class="ph-muted">Find anything</p><p class="ph-title">Devices</p></div><span class="ph-icon-btn">${icon('bell')}</span></div>
-      <div class="ph-search">${icon('search')}<span>Search devices</span></div>
-      <div class="ph-chips"><span class="is-on">Using most</span><span>Always on</span><span>Faults</span></div>
+      <div class="ph-hello"><div><p class="ph-muted">Eligible only</p><p class="ph-title">Chargers</p></div><span class="ph-icon-btn">${icon('bell')}</span></div>
+      <div class="ph-search">${icon('search')}<span>Search an area</span></div>
+      <div class="ph-chips"><span class="is-on">Host type</span><span>Power</span><span>Freshness</span></div>
       <div class="ph-card ph-list">
         ${[
-          ['Heat pump', 'snow', 'Living room', '1.8 kW', 92],
-          ['Washer', 'washer', 'Laundry', '1.1 kW', 61],
-          ['Fridge', 'fridge', 'Kitchen', '0.2 kW', 34],
-          ['Television', 'tv', 'Living room', '0.1 kW', 18],
-          ['Router', 'spark', 'Hallway', '12 W', 9],
+          ['Café charger', 'snow', 'Host-updated', '7 kW', 92],
+          ['Office charger', 'washer', 'Partner telemetry', '7 kW', 61],
+          ['Home charger', 'fridge', 'Stale info', '7 kW', 34],
+          ['Public station', 'tv', 'Status unknown', 'Link', 18],
+          ['Demo listing', 'spark', 'Demo data', 'Demo', 9],
         ]
           .map(
             ([n, ic, room, v, p]) => `
