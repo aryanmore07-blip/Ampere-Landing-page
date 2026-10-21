@@ -1,0 +1,149 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/urbanist';
+@import 'leaflet/dist/leaflet.css';
+
+@theme {
+  --font-sans: 'Urbanist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --color-canvas: #efefec;
+  --color-surface: #ffffff;
+  --color-surface-2: #f6f6f3;
+  --color-ink: #0e0f0e;
+  --color-ink-2: #4c4f4a;
+  --color-muted: #8a8d86;
+  --color-line: #e3e3de;
+  --color-volt: #6fa35c;
+  --color-volt-strong: #4f7f3f;
+  --color-volt-soft: #e3eedc;
+  --color-amber: #d4973a;
+  --color-amber-soft: #f7ead3;
+  --color-danger: #c4543d;
+  --color-danger-soft: #f6e0da;
+  --color-night: #161716;
+  --color-night-2: #222422;
+  --color-night-3: #2e312e;
+
+  --radius-card: 1.6rem;
+  --shadow-soft: 0 1px 2px rgb(14 15 14 / 0.04), 0 8px 24px -12px rgb(14 15 14 / 0.12);
+  --shadow-float: 0 12px 40px -12px rgb(14 15 14 / 0.35);
+
+  --animate-pulse-ring: pulse-ring 2s ease-out infinite;
+  --animate-flow: flow 1.2s linear infinite;
+  --animate-scan: scan 3.2s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.35s ease-out both;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.7; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+@keyframes flow {
+  to { stroke-dashoffset: -24; }
+}
+@keyframes scan {
+  0%, 100% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 0.9; }
+  50% { transform: translateY(100%); opacity: 0.9; }
+  60% { opacity: 0; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: 'ss01', 'tnum';
+  overscroll-behavior-y: none;
+}
+#root {
+  min-height: 100dvh;
+}
+::selection {
+  background: var(--color-volt-soft);
+}
+:focus-visible {
+  outline: 2.5px solid var(--color-volt-strong);
+  outline-offset: 2px;
+  border-radius: 0.75rem;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+.pt-safe { padding-top: env(safe-area-inset-top); }
+.bottom-safe { bottom: calc(env(safe-area-inset-bottom) + 0.75rem); }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* Leaflet on the dark map */
+.leaflet-container {
+  background: var(--color-night);
+  font-family: var(--font-sans);
+}
+.leaflet-control-attribution {
+  background: rgb(22 23 22 / 0.7) !important;
+  color: #9a9d96 !important;
+  font-size: 10px;
+  border-radius: 8px 0 0 0;
+}
+.leaflet-control-attribution a { color: #c9ccc4 !important; }
+.leaflet-div-icon { background: none; border: none; }
+/* Standard OSM tiles rendered dark. Demo use only — production needs a contracted tile provider. */
+.amp-dark-tiles { filter: invert(1) hue-rotate(180deg) grayscale(0.85) brightness(0.78) contrast(0.92); }
+.leaflet-tooltip.amp-tip {
+  background: var(--color-night-2);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: var(--shadow-float);
+  font-weight: 600;
+}
+.leaflet-tooltip.amp-tip::before { display: none; }
+
+.amp-pin {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: #4c6f41;
+  border: 4px solid rgb(111 163 92 / 0.35);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.45);
+  color: #fff;
+  transition: transform 0.2s;
+}
+.amp-pin.is-selected { transform: scale(1.18); background: var(--color-volt); border-color: rgb(255 255 255 / 0.5); }
+.amp-pin.is-directory { background: #6f6a5c; border-color: rgb(212 151 58 / 0.35); }
+.amp-pin.is-directory.is-selected { background: var(--color-amber); }
+.amp-origin {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 4px solid var(--color-volt);
+}
+.amp-origin::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  border: 2px solid var(--color-volt);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
