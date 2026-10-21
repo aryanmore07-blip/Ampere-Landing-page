@@ -10,8 +10,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon-180x180.png'],
+      // Paths follow Vite's `base`: start_url and scope default to it, and the relative URLs below
+      // resolve against it, so one config serves "/" on its own or "/app/" behind the landing page.
       manifest: {
-        id: '/',
         name: 'Ampere — EV charging, shared',
         short_name: 'Ampere',
         description:
@@ -20,8 +21,6 @@ export default defineConfig({
         background_color: '#f1f1ef',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/',
-        scope: '/',
         categories: ['travel', 'navigation', 'utilities'],
         icons: [
           { src: 'pwa-64x64.png', sizes: '64x64', type: 'image/png' },
@@ -30,13 +29,13 @@ export default defineConfig({
           { src: 'maskable-icon-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
         shortcuts: [
-          { name: 'Find a charger', url: '/discover' },
-          { name: 'Jury console', url: '/jury' },
+          { name: 'Find a charger', url: 'discover' },
+          { name: 'Jury console', url: 'jury' },
         ],
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
-        navigateFallback: '/index.html',
+        navigateFallback: 'index.html',
         // Map tiles are deliberately not cached: provider terms forbid bulk/offline tile storage.
       },
     }),

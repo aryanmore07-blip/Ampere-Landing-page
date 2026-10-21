@@ -8,6 +8,7 @@ import './style.css';
 import { renderPhones } from './phones.js';
 import { renderContent } from './content.js';
 import { initHeroShader } from './shader.js';
+import './app-link.js';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 

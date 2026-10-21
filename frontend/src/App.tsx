@@ -1,10 +1,11 @@
 import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react'
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation, useSearchParams } from 'react-router-dom'
 import { useSession } from './app/hooks'
 import { homePath, Shell } from './components/Shell'
 import { Spinner } from './components/ui'
 import { runExpiryWorker } from './server/bookings'
 import { ensureSeeded } from './server/db'
+import { signIn } from './server/session'
 
 const Welcome = lazy(() => import('./pages/Welcome'))
 const SignIn = lazy(() => import('./pages/SignIn'))
@@ -41,6 +42,12 @@ function Authed({ children }: { children: ReactNode }) {
 
 function Root() {
   const user = useSession()
+  // Landing-page demo link (/?demo=driver): sign in as the demo driver and open the driver dashboard.
+  const demo = useSearchParams()[0].get('demo') === 'driver'
+  useEffect(() => {
+    if (demo) signIn('u-driver')
+  }, [demo])
+  if (demo) return user?.id === 'u-driver' ? <Navigate to="/home" replace /> : null
   let seen = false
   try {
     seen = localStorage.getItem('ampere.welcomed') === '1'
